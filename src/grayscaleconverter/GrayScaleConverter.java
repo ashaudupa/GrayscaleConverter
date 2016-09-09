@@ -39,15 +39,17 @@ public class GrayScaleConverter {
             ImageResource inImage = new ImageResource(f);
             String fname = inImage.getFileName();
             System.out.println(fname);
-            String newName = "gray-"+fname;
-           // ImageResource grayImage = new ImageResource(f);
+            String newName = "./images/gray-"+fname;
             ImageResource gray = makeGray(inImage);
             gray.setFileName(newName);
             System.out.println(gray.getFileName());
-            //ImageIO.write(gray,".jpg");
             gray.save();
             gray.draw();
         }
+    }
+    public static void main(String[] args) {
+        GrayScaleConverter gsc = new GrayScaleConverter();
+        gsc.selectAndConvert();
     }
         
 }
